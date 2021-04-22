@@ -2,7 +2,7 @@ package D18127122;
 
 import ie.tudublin.*;
 
-public class WallPaper1 extends Visual {
+public class WallPaper extends Visual {
 
   float x1[] = new float[] {
     random(500.0f),
