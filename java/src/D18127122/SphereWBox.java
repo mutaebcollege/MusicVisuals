@@ -31,7 +31,13 @@ public class SphereWBox extends Visual {
     background(0);
     noFill();
     lights();
-    stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+    // stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+
+    int numRects = (int) (255 / 10.0f);
+    // float w = width / (float) numRects;
+    float cgap = 255 / (float) numRects;
+    stroke(map(getSmoothedAmplitude() * cgap / 2, 0, 1, 0, 255), 255, 255);
+
     camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
     translate(0, 0, -250);
 
