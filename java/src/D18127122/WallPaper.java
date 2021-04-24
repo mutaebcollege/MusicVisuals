@@ -36,6 +36,10 @@ public class WallPaper extends Visual {
   public void setup() {
     surface.setResizable(true);
     background(0);
+    startMinim();
+    loadAudio("sofar.mp3");
+    getAudioPlayer().cue(0);
+    getAudioPlayer().play();
   }
 
   public void draw() {
