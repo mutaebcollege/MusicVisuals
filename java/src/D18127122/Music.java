@@ -1,47 +1,41 @@
 package D18127122;
 
-import ie.tudublin.*;
+public class Music implements UI {
 
-public class Music extends Visual {
+  MainVisual mv;
 
-  float circles;
-  float theta;
-
-  public void settings() {
-    size(800, 800, P3D);
-  }
-
-  public void setup() {
-    surface.setResizable(true);
-    startMinim();
-    loadAudio("aspring.mp3");
-    colorMode(HSB);
-
-    getAudioPlayer().cue(0);
-    getAudioPlayer().play();
+  public Music(MainVisual mv) {
+    this.mv = mv;
 
     circles = 30;
     theta = 1.0f;
   }
 
-  public void draw() {
-    background(0);
-    noFill();
-    translate(width / 2, height / 2);
-    strokeWeight(5);
+  float circles;
+  float theta;
 
-    calculateAverageAmplitude();
-    float amp = getAmplitude() / 5.0f;
+  @Override
+  public void run() {
+    mv.background(0);
+    mv.noFill();
+    mv.translate(mv.width / 2, mv.height / 2);
+    mv.strokeWeight(5);
+
+    mv.calculateAverageAmplitude();
+    float amp = mv.getAmplitude() / 5.0f;
+
+    float pi = mv.PI;
+    float twoPi = mv.TWO_PI;
 
     for (int i = 0; i < circles; i++) {
-      float sine = sin(theta - map(i, 0, circles, 0, PI));
-      float arc = map(sine, -1, 1, PI, TWO_PI);
-      float color = map(sine, -1, 1, 0, 255);
-      stroke(color, 255, 255);
+      float sine = mv.sin(theta - mv.map(i, 0, circles, 0, pi));
+      float arc = mv.map(sine, -1, 1, pi, twoPi);
+      float color = mv.map(sine, -1, 1, 0, 255);
+      mv.stroke(color, 255, 255);
 
       float w = i * 22;
-      arc(0, 0, -w, -w, -(arc + PI), -arc);
-      arc(0, 0, -w, -w, (arc - PI), arc);
+      mv.arc(0, 0, -w, -w, -(arc + pi), -arc);
+      mv.arc(0, 0, -w, -w, (arc - pi), arc);
     }
     theta += amp;
   }

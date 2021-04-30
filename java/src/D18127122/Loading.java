@@ -1,30 +1,26 @@
 package D18127122;
 
-import ie.tudublin.*;
+public class Loading implements UI {
 
-public class Loading extends Visual {
+  MainVisual mv;
 
-  public void settings() {
-    size(800, 800, P3D);
-  }
-
-  public void setup() {
-    surface.setResizable(true);
-    background(0);
+  public Loading(MainVisual mv) {
+    this.mv = mv;
   }
 
   float rotate = 0;
 
-  public void draw() {
-    noStroke();
-    fill(0, 0, 0, 100);
+  @Override
+  public void run() {
+    mv.noStroke();
+    mv.fill(0, 0, 0, 100);
     rotate += 0.1f;
 
-    rect(0, 0, width, height);
-    translate(400, 400);
-    rotate(rotate);
+    mv.rect(0, 0, mv.width, mv.height);
+    mv.translate(400, 400);
+    mv.rotate(rotate);
 
-    fill(255, 255, 255, 255);
-    ellipse(100, 100, 25, 25);
+    mv.fill(255, 255, 255, 255);
+    mv.ellipse(100, 100, 25, 25);
   }
 }

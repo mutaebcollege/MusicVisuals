@@ -1,17 +1,16 @@
 package ie.tudublin;
 
 import D18127122.*;
-import example.*;
 
 public class Main {
 
-  public void startUI() {
+  public void mainUI() {
     String[] a = { "MAIN" };
-    processing.core.PApplet.runSketch(a, new WallPaper());
+    processing.core.PApplet.runSketch(a, new MainVisual());
   }
 
   public static void main(String[] args) {
     Main main = new Main();
-    main.startUI();
+    main.mainUI();
   }
 }

@@ -1,48 +1,50 @@
 package D18127122;
 
-import ie.tudublin.*;
+public class WallPaper implements UI {
 
-public class WallPaper extends Visual {
+  MainVisual mv;
+  float x1[] = new float[4];
+  float y1[] = new float[4];
+  float x2[] = new float[4];
+  float y2[] = new float[4];
 
-  float x1[] = new float[] {
-    random(500.0f),
-    random(500.0f),
-    random(500.0f),
-    random(500.0f),
-  };
-  float y1[] = new float[] {
-    random(500.0f),
-    random(500.0f),
-    random(500.0f),
-    random(500.0f),
-  };
-  float x2[] = new float[] {
-    random(1.5f),
-    random(1.5f),
-    random(1.5f),
-    random(1.5f),
-  };
-  float y2[] = new float[] {
-    random(1.5f),
-    random(1.5f),
-    random(1.5f),
-    random(1.5f),
-  };
+  public WallPaper(MainVisual mv) {
+    this.mv = mv;
+    x1 =
+      new float[] {
+        mv.random(500),
+        mv.random(500),
+        mv.random(500),
+        mv.random(500),
+      };
 
-  public void settings() {
-    size(800, 800, P3D);
+    y1 =
+      new float[] {
+        mv.random(500),
+        mv.random(500),
+        mv.random(500),
+        mv.random(500),
+      };
+
+    x2 =
+      new float[] {
+        mv.random(1.5f),
+        mv.random(1.5f),
+        mv.random(1.5f),
+        mv.random(1.5f),
+      };
+
+    y2 =
+      new float[] {
+        mv.random(1.5f),
+        mv.random(1.5f),
+        mv.random(1.5f),
+        mv.random(1.5f),
+      };
   }
 
-  public void setup() {
-    surface.setResizable(true);
-    background(0);
-    startMinim();
-    loadAudio("sofar.mp3");
-    getAudioPlayer().cue(0);
-    getAudioPlayer().play();
-  }
-
-  public void draw() {
+  @Override
+  public void run() {
     for (int i = 0; i < 4; i++) {
       x1[i] += x2[i];
       y1[i] += y2[i];
@@ -57,29 +59,26 @@ public class WallPaper extends Visual {
         y2[i] = -y2[i];
       }
 
-      if (x1[i] > width) {
-        x1[i] = width;
+      if (x1[i] > mv.width) {
+        x1[i] = mv.width;
         x2[i] = -x2[i];
       }
 
-      if (y1[i] > height) {
-        y1[i] = height;
+      if (y1[i] > mv.height) {
+        y1[i] = mv.height;
         y2[i] = -y2[i];
       }
     }
 
-    blendMode(ADD);
-    noStroke();
-
     int steps = 1000;
     for (int i = 0; i <= steps; i++) {
       float t = i / (float) steps;
-      fill(t * 5, (1 - t) * 2, t * 2);
+      mv.fill(t * 5, (1 - t) * 2, t * 2);
 
-      float ex = bezierPoint(x1[0], x1[1], x1[2], x1[3], t);
-      float ey = bezierPoint(y1[0], y1[1], y1[2], y1[3], t);
+      float ex = mv.bezierPoint(x1[0], x1[1], x1[2], x1[3], t);
+      float ey = mv.bezierPoint(y1[0], y1[1], y1[2], y1[3], t);
 
-      ellipse(ex, ey, 2, 2);
+      mv.ellipse(ex, ey, 2, 2);
     }
   }
 }
