@@ -6,7 +6,7 @@ Student Number: D18127122
 
 # Description of the assignment
 
-The first time I cloned this repo I did not see myself putting the time to work hard but then I enjoyed what I was doing so I tried to create something cool. I first coded two spheres with a box but then it was a simple code and with no logic behind it. Therefore, I decided that the first visual for this is going to be a clone of the Mac wallpaper when it's in sleep mode. I got inspired by how they make colors travel from one side of the screen to the other side. Then the second visual I coded was the loading visual. This piece of visual is very common in iOS development when you are trying to fetch or load data from an API. Therefore, I decided to make it the default visual for this project. Lastly, is the circle part where I drew two half circles which respond to the amplitude of the music because I thought it would be cool since my previous visuals don't respond to music.
+The first time I forked this repo I did not see myself putting the time to work hard but then I enjoyed what I was doing so I tried to create something cool. I first coded two spheres with a box but then it was a simple code and with no logic behind it. Therefore, I decided that the first visual for this is going to be a clone of the Mac wallpaper when it's in sleep mode. I got inspired by how they make colors travel from one side of the screen to the other side. Then the second visual I coded was the loading visual. This piece of visual is very common in iOS development when you are trying to fetch or load data from an API. Therefore, I decided to make it the default visual for this project. Lastly, is the circle part where I drew two half circles which respond to the amplitude of the music because I thought it would be cool since my previous visuals don't respond to music.
 
 # Instructions
 
@@ -24,7 +24,7 @@ The third class, which is based on two half circles which the second half circle
 
 # What I am most proud of in the assignment
 
-I proud that I decided to make sure this project unique and not to just modify the code that was provided in the class which in the beinging I planed to do and get a passing grade. But something in me said no and this tunred out very well for me.
+I am proud that I decided to make sure this project unique and not just modify the code that was provided in the class which in the beginning I planned to do so and get a passing grade. But something in me said no and this turned out very well for me.
 
 # Markdown Tutorial
 
