@@ -3,9 +3,11 @@ package D18127122;
 public class Music implements UI {
 
   MainVisual mv;
+  Circle c;
 
-  public Music(MainVisual mv) {
+  public Music(MainVisual mv, Circle c) {
     this.mv = mv;
+    this.c = c;
 
     circles = 30;
     theta = 1.0f;
@@ -34,8 +36,19 @@ public class Music implements UI {
       mv.stroke(color, 255, 255);
 
       float w = i * 22;
-      mv.arc(0, 0, -w, -w, -(arc + pi), -arc);
-      mv.arc(0, 0, -w, -w, (arc - pi), arc);
+
+      switch (c) {
+        case LEFT:
+          mv.arc(0, 0, -w, -w, -(arc + pi), -arc);
+          break;
+        case RIGHT:
+          mv.arc(0, 0, -w, -w, (arc - pi), arc);
+          break;
+        case BOTH:
+          mv.arc(0, 0, -w, -w, -(arc + pi), -arc);
+          mv.arc(0, 0, -w, -w, (arc - pi), arc);
+          break;
+      }
     }
     theta += amp;
   }
