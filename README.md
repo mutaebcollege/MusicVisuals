@@ -30,4 +30,4 @@ I am proud that I decided to make sure this project unique and not just modify t
 
 This is a youtube video:
 
-[![YouTube](https://i.ytimg.com/an_webp/0IWaRXNK6ww/mqdefault_6s.webp?du=3000&sqp=CMCWs4QG&rs=AOn4CLCLc2SWQZVhLO8Sku26lQgf96UMQQ)](https://www.youtube.com/watch?v=0IWaRXNK6ww)
+[![YouTube](https://i.ytimg.com/an_webp/0IWaRXNK6ww/mqdefault_6s.webp?du=3000&sqp=CLD-voQG&rs=AOn4CLDsMHBtVxzKJpL6y1DtO0gTx1JWuQ)](https://www.youtube.com/watch?v=0IWaRXNK6ww)
